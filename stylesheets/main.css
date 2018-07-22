@@ -1,0 +1,14 @@
+.panel {
+  background-color: rgb(83, 228, 238);
+  max-height: 200px;
+  max-width: 200px;
+  text-align: center;
+}
+
+.trapezoid {
+	border-bottom: 50px solid red;
+	border-left: 25px solid transparent;
+	border-right: 25px solid transparent;
+	height: 0;
+  width: 200px;
+}
