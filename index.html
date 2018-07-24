@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
     crossorigin="anonymous">
   <link rel="stylesheet" href="./stylesheets/main.css">
-  <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Bangers|Permanent+Marker" rel="stylesheet">
 </head>
 
 <body>
@@ -19,13 +19,23 @@
 
   <section class="container-fluid">
     <div class="row">
+      <!-- the following is the start button panel -->
       <div class="col panel">
-        <div class="ring">
-        <div id="test" class="strt-button d-flex align-items-center justify-content-center" onclick="turnItOn()">START</div>
-      </div>
-      <div class="col">
-        <button onclick="reset()">reset</button>
-      </div>
+        <!-- This div makes the first row of bolts -->
+        <div id="boltset1" class="d-flex flex-row justify-content-between"></div>
+        <!-- The ring has the start button nested inside it -->
+        <div class="outer-ring">
+          <div class="strt-ring">
+            <div id="test" class="strt-button d-flex align-items-center justify-content-center" onclick="turnItOn()">START</div>
+          </div>
+        </div>
+        
+        <div class="col off-btn-position">
+          <div class="off-ring">
+            <div class="off-button d-flex align-items-center justify-content-center" onclick="reset()">OFF</div>
+          </div>
+        </div>
+        <div id="boltset2" class="d-flex flex-row justify-content-between"></div>
       </div>
     </div>
   </section>
@@ -38,11 +48,22 @@
 </html>
 
 <script>
-  function turnItOn(){
+  function boltCreator(n, tagname){
+    for(var i=0;i<n;i++){
+      var bolt=document.createElement('div');
+      bolt.className="bolt";
+      var parent=document.getElementById(tagname);
+      parent.appendChild(bolt);
+    }
+  }
+  boltCreator(2,'boltset1')
+  boltCreator(2,'boltset2')
+
+  function turnItOn() {
     document.getElementById('test').classList.add('light-on');
   }
 
-  function reset(){
+  function reset() {
     document.getElementById('test').classList.remove('light-on')
   }
 </script>
