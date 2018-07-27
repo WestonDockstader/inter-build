@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
     crossorigin="anonymous">
   <link rel="stylesheet" href="./stylesheets/main.css">
-  <link href="https://fonts.googleapis.com/css?family=Bangers|Permanent+Marker" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Bangers|Permanent+Marker|Rock+Salt" rel="stylesheet">
 </head>
 
 <body>
@@ -20,22 +20,36 @@
   <section class="container-fluid">
     <div class="row">
       <!-- the following is the start button panel -->
-      <div class="col panel">
+      <div class="col panel d-inline">
         <!-- This div makes the first row of bolts -->
         <div id="boltset1" class="d-flex flex-row justify-content-between"></div>
         <!-- The ring has the start button nested inside it -->
         <div class="outer-ring">
           <div class="strt-ring">
-            <div id="test" class="strt-button d-flex align-items-center justify-content-center" onclick="turnItOn()">START</div>
+            <div id="start-btn" class="strt-button d-flex align-items-center justify-content-center" onclick="turnItOn()">START</div>
           </div>
         </div>
-        
-        <div class="col off-btn-position">
+        <!-- this div is for adjusting the position of the off buttons -->
+        <div class="off-btn-position">
+          <!-- the off button ring has the off button nested inside it -->
           <div class="off-ring">
             <div class="off-button d-flex align-items-center justify-content-center" onclick="reset()">OFF</div>
           </div>
         </div>
+        <!-- this div make the bottom bolts for the start button panel -->
         <div id="boltset2" class="d-flex flex-row justify-content-between"></div>
+        <!-- <div id="note">Label the Power Unit...</div> -->
+      </div>
+
+      <div class="col panel name-bar">
+        <div id="boltset3" class="d-flex flex-row justify-content-between"></div>
+        <div class="sign-back">
+          <div class="heading text-center">
+            <h3 id="neon-sign" class="name-bar-font">Weston Dockstader</h3>
+            <h5 id="neon-sign1" class="name-bar-font">Junior Software Developer</h5>
+          </div>
+          <div class="power-bar"></div>
+        </div>
       </div>
     </div>
   </section>
@@ -58,12 +72,17 @@
   }
   boltCreator(2,'boltset1')
   boltCreator(2,'boltset2')
+  boltCreator(5,'boltset3')
 
   function turnItOn() {
-    document.getElementById('test').classList.add('light-on');
+    document.getElementById('start-btn').classList.add('light-on');
+    document.getElementById('neon-sign').classList.add('neon-on');
+    document.getElementById('neon-sign1').classList.add('neon-on');
   }
 
   function reset() {
-    document.getElementById('test').classList.remove('light-on')
+    document.getElementById('start-btn').classList.remove('light-on');
+    document.getElementById('neon-sign').classList.remove('neon-on');
+    document.getElementById('neon-sign1').classList.remove('neon-on');
   }
 </script>

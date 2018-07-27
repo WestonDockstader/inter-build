@@ -1,9 +1,9 @@
 .panel {
   background-color: rgb(148, 145, 145);
   max-height: 200px;
-  max-width: 300px;
+  max-width: 150px;
   height: 200px;
-  width: 300px;
+  width: 150px;
   box-shadow: inset 0 0 30px rgb(88, 88, 87);
   border-radius: 3px;
 }
@@ -33,11 +33,11 @@
   position: relative;
 }
 .strt-button:active{
-  box-shadow: inset 0 0 20px rgb(46, 43, 43)
+  box-shadow: inset 0 0 20px rgb(46, 43, 43), 0 0 20px rgb(37, 36, 36);
 }
 .light-on {
-  background-color: rgb(243,23,45);
-  box-shadow: inset 0 0 40px rgb(189, 24, 24);
+  background-color: rgb(252, 32, 54);
+  box-shadow: inset 0 0 40px rgb(226, 30, 30), inset 0 0 25px rgb(241, 25, 25), inset 0 0 10px rgb(219, 20, 20);
   color: rgb(214, 11, 31);
   text-shadow: 0 0 2px rgb(197, 191, 191);
 }
@@ -69,13 +69,18 @@
   position: relative;
 }
 .off-button:active {
-  box-shadow: inset 0 0 20px rgb(117, 114, 56)
+  box-shadow: inset 0 0 20px rgb(117, 114, 56), 0 0 20px rgb(46, 43, 43);
 }
 .off-btn-position {
   padding: 0;
   display: inline;
 }
 /* end off button */
+
+.name-bar {
+  max-width: 500px;
+  width: 500px;
+}
 
 #boltset1 {
   transform: translateY(10px);
@@ -92,9 +97,35 @@
   height: 15px;
   width: 15px;
   background-color: rgb(153, 152, 152);
-  box-shadow: inset 0 0 3px rgb(80, 80, 79);
+  box-shadow: inset 0 0 5px rgb(77, 77, 76);
 }
 
-.strt-button-ring {
+#note {
+  font-family: 'Rock Salt', cursive;
+  font-size: 8px;
+  background-color: rgb(199, 184, 118);
+  width: 100px;
+  height: auto;
+}
 
+.sign-back {
+  background-color: rgb(158, 155, 155);
+  /* max-width: 450px; */
+  width: 450px;
+  height: 120px;
+  border-radius: 3px;
+  margin-top: 5px;
+  box-shadow: inset 0 0 20px rgb(110, 107, 107)
+}
+
+.name-bar-font {
+  font-family: 'Rock Salt',cursive;
+  padding-top: 10px;
+  color: rgb(190, 185, 185);
+  text-shadow: 0 0 5px rgb(59, 58, 58), 0 0 10px rgb(59, 57, 57);
+}
+
+.neon-on {
+  color: rgb(255, 255, 255);
+  text-shadow: 0 0 5px rgb(255, 255, 255), 0 0 10px rgb(255, 255, 255), 0 0 20px rgb(34,141,255), 0 0 30px rgb(34,141,255), 0 0 40px rgb(34,141,255), 0 0 55px rgb(34,141,255);
 }
