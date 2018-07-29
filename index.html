@@ -9,20 +9,20 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
     crossorigin="anonymous">
   <link rel="stylesheet" href="./stylesheets/main.css">
-  <link href="https://fonts.googleapis.com/css?family=Bangers|Permanent+Marker|Rock+Salt" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Bangers|Permanent+Marker|Rock+Salt|Ruslan+Display" rel="stylesheet">
 </head>
 
 <body>
-  <header class="container-fluid">
+  <header class="container">
 
   </header>
 
-  <section class="container-fluid">
-    <div class="row">
+  <section class="container">
+    <div class="row justify-content-between">
       <!-- the following is the start button panel -->
-      <div class="col panel d-inline">
+      <div class="col-2 panel">
         <!-- This div makes the first row of bolts -->
-        <div id="boltset1" class="d-flex flex-row justify-content-between"></div>
+        <div id="boltset0" class="d-flex flex-row justify-content-between"></div>
         <!-- The ring has the start button nested inside it -->
         <div class="outer-ring">
           <div class="strt-ring">
@@ -37,19 +37,47 @@
           </div>
         </div>
         <!-- this div make the bottom bolts for the start button panel -->
-        <div id="boltset2" class="d-flex flex-row justify-content-between"></div>
+        <div id="boltset1" class="d-flex flex-row justify-content-between"></div>
         <!-- <div id="note">Label the Power Unit...</div> -->
       </div>
 
-      <div class="col panel name-bar">
-        <div id="boltset3" class="d-flex flex-row justify-content-between"></div>
-        <div class="sign-back">
-          <div class="heading text-center">
+      <div class="col-8 panel name-bar">
+        <div id="boltset2" class="d-flex justify-content-between d-block"></div>
+        <div class="sign-back mx-auto">
+          <div class="heading text-center align-items-center">
             <h3 id="neon-sign" class="name-bar-font">Weston Dockstader</h3>
             <h5 id="neon-sign1" class="name-bar-font">Junior Software Developer</h5>
           </div>
-          <div class="power-bar"></div>
+          <!-- <div class="power-bar"></div> -->
         </div>
+        <div id="boltset3" class="d-flex justify-content-between d-block"></div>
+      </div>
+    </div>
+    <div class="row justify-content-between">
+      <div class="col-2.5">
+        <div class="panel p-1">
+          <div class="selector">
+            <p class="mx-auto">About Me</p>
+          </div>
+        </div>
+        <div class="panel">
+          <div class="selector">
+            <p>Programs</p>
+          </div>
+        </div>
+        <div class="panel">
+          <div class="selector">
+            <p>Contact Me</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-9 panel">
+        <div id="boltset4" class="d-flex justify-content-between d-block"></div>
+        <div class="content-area mx-auto">
+          <!-- carousel all content here with the buttons pulling the carousel
+          until I get to projects then it needs to auto carosel and have fun buttons appear -->
+        </div>
+        <div id="boltset5" class="d-flex align-self-baseline justify-content-between d-block"></div>
       </div>
     </div>
   </section>
@@ -62,17 +90,34 @@
 </html>
 
 <script>
-  function boltCreator(n, tagname){
-    for(var i=0;i<n;i++){
-      var bolt=document.createElement('div');
-      bolt.className="bolt";
-      var parent=document.getElementById(tagname);
+  function boltCreator(n, tagname) {
+    for (var i = 0; i < n; i++) {
+      var bolt = document.createElement('div');
+      // for now the following if else is for adjusting the margin on bolts
+      var digit = parseInt(tagname[tagname.length - 1])
+      if (digit == 0 || digit % 2 == 0) {
+        bolt.className = "bolt";
+      } else {
+        bolt.className = "btm-bolt";
+      }
+      var parent = document.getElementById(tagname);
       parent.appendChild(bolt);
     }
   }
-  boltCreator(2,'boltset1')
-  boltCreator(2,'boltset2')
-  boltCreator(5,'boltset3')
+
+  function createBoltSets() {
+    var bCount = [2, 5, 6]
+    var n = 6
+    var set = 0
+    for (var i = 0; i < n; i++) {
+      var idName = 'boltset' + i
+      boltCreator(bCount[set], idName)
+      if (i != 0 && i % 2 != 0) {
+        set++;
+      }
+    }
+  }
+  createBoltSets();
 
   function turnItOn() {
     document.getElementById('start-btn').classList.add('light-on');
