@@ -20,7 +20,7 @@
   <section class="container">
     <div class="row justify-content-between">
       <!-- the following is the start button panel -->
-      <div class="col-2 panel">
+      <div class="col-2 panel btn-panel">
         <!-- This div makes the first row of bolts -->
         <div id="boltset0" class="d-flex flex-row justify-content-between"></div>
         <!-- The ring has the start button nested inside it -->
@@ -45,8 +45,8 @@
         <div id="boltset2" class="d-flex justify-content-between d-block"></div>
         <div class="sign-back mx-auto">
           <div class="heading text-center align-items-center">
-            <h3 id="neon-sign" class="name-bar-font">Weston Dockstader</h3>
-            <h5 id="neon-sign1" class="name-bar-font">Junior Software Developer</h5>
+            <p id="neon-sign" class="name-bar-font">Weston Dockstader</p>
+            <p id="neon-sign1" class="name-bar-font">Junior Software Developer</p>
           </div>
           <!-- <div class="power-bar"></div> -->
         </div>
@@ -54,28 +54,39 @@
       </div>
     </div>
     <div class="row justify-content-between">
-      <div class="col-2.5">
-        <div class="panel p-1">
-          <div class="selector">
-            <p class="mx-auto">About Me</p>
+      <div class="col-3">
+        <div class="panel p-1 align-items-center">
+          <div class="selector mx-auto text-center">
+            <p class="">About Me</p>
           </div>
         </div>
-        <div class="panel">
-          <div class="selector">
+        <div class="panel p-1">
+          <div class="selector mx-auto text-center">
             <p>Programs</p>
           </div>
         </div>
-        <div class="panel">
-          <div class="selector">
-            <p>Contact Me</p>
+        <div class="panel p-1">
+          <div class="selector mx-auto text-center">
+            <p>Education</p>
           </div>
         </div>
       </div>
       <div class="col-9 panel">
         <div id="boltset4" class="d-flex justify-content-between d-block"></div>
-        <div class="content-area mx-auto">
+        <div id="content-slides" class="content-area mx-auto carousel slide" data-ride="carousel">
           <!-- carousel all content here with the buttons pulling the carousel
           until I get to projects then it needs to auto carosel and have fun buttons appear -->
+            <div class="carousel-inner">
+              <div id="abt-me" class="carousel-item active">
+
+              </div>
+              <div class="carousel-item">
+
+              </div>
+              <div class="carousel-item">
+
+              </div>
+            </div>
         </div>
         <div id="boltset5" class="d-flex align-self-baseline justify-content-between d-block"></div>
       </div>
@@ -106,7 +117,7 @@
   }
 
   function createBoltSets() {
-    var bCount = [2, 5, 6]
+    var bCount = [2, 5, 7]
     var n = 6
     var set = 0
     for (var i = 0; i < n; i++) {
